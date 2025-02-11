@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  devServer: {
+    port: 5000,
+  },
+
   components: [
     {
       path: '~/components',
