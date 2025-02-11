@@ -1,0 +1,55 @@
+title: TapView
+description: TapView is a data integration platform that allows you to connect to your data sources and extract data into your data warehouse.
+navigation: false
+hero:
+  title: Building Document-Based Real-Time Materialized Views
+  description: Collect Real-Time data from your source RDBMS using CDC, build document-structured materialized views in MongoDB Atlas. Enjoy a FREE trial of our cloud service today!
+advantages:
+  title: Core Technology Advantages
+  description: Innovative solutions providing comprehensive support for your data services
+  items:
+    - title: Multi-Source Data Support
+      description: Supports multiple data sources such as Oracle, PostgreSQL, and MongoDB, enabling seamless data interoperability.
+      icon: i-heroicons-circle-stack-16-solid
+    - title: Real-Time Synchronization
+      description: Millisecond-level latency ensures data timeliness, supporting both incremental and full synchronization
+      icon: i-heroicons-bolt-solid
+    - title: Secure and Reliable
+      description: Enterprise-grade security, encrypted data transmission, and robust fault-tolerance mechanisms.
+      icon: i-heroicons-shield-check-solid
+features:
+  title: Core Technology Advantages
+  description: Innovative solutions providing comprehensive support for your data services
+  items:
+    - title: Simple and Easy-to-Use Interface
+      description: A visual configuration interface that enables data flow setup without coding, significantly boosting work efficiency.
+      image: /images/product_features_1.png
+    - title: Deep Compatibility with MongoDB Atlas
+      description: Offers professional-grade compatibility with MongoDB Atlas—stable, reliable, and trustworthy.
+      image: /images/product_features_2.png
+    - title: Supports Extensive Data Sources
+      description: Fully embraces massive data sources with broad compatibility for various data inputs.
+      image: /images/product_features_3.png
+    - title: Pay-As-You-Go, a Thoughtful Billing Solution
+      description: No complicated calculations needed—pay only for what you use. A hassle-free billing solution designed to ease all your concerns.
+      image: /images/product_features_4.png
+
+stories:
+  title: Customer Success Stories
+  items:
+    - title: 某大型企业数据中台建设
+      description: 某大型企业数据中台建设
+      image: /images/stories_1.png
+    - title: 某大型企业数据中台建设
+      description: 某大型企业数据中台建设
+      image: /images/stories_2.png
+    - title: 某大型企业数据中台建设
+      description: 某大型企业数据中台建设
+      image: /images/stories_3.png
+
+faq:
+  title: FAQ
+  items:
+    - label: What databases does TapView support?
+      content: TapView supports a wide range of databases, including MySQL, PostgreSQL, MongoDB, Oracle, and more.
+      defaultOpen: true
