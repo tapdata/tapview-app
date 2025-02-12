@@ -4,7 +4,6 @@ import type { DeepPartial } from '#ui/types'
 import type { card as cardConfig } from '#ui/ui.config'
 import type { PropType } from 'vue'
 import colors from '#tailwind-config/theme/colors'
-// import { getSlotChildrenText } from '../../lib/slots'
 import { getNuxtLinkProps, nuxtLinkProps } from '#ui/utils'
 import { twJoin } from 'tailwind-merge'
 

@@ -1,23 +1,77 @@
+<script setup lang="ts">
+import type { NavItem } from '@nuxt/content'
+
+const navigation = inject<Ref<NavItem[]>>('navigation', ref([]))
+
+const links = [{
+  label: 'Product',
+  to: '/product',
+}, {
+  label: 'Connector',
+  to: '/connector',
+}, {
+  label: 'Docs',
+  to: '/docs',
+}, {
+  label: 'Blog',
+  to: '/blog',
+}, {
+  label: 'Pricing',
+  to: '/pricing',
+}]
+</script>
+
 <template>
-  <header class="bg-background/75 backdrop-blur border-b border-gray-200 dark:border-gray-800 -mb-px sticky top-0 z-50 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+  <!-- <header class="bg-background/75 backdrop-blur border-b border-gray-200 dark:border-gray-800 -mb-px sticky top-0 z-50 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
     <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex items-center justify-between gap-3 h-[--header-height]">
       <div class="lg:flex-1 flex items-center gap-1.5">
         <NuxtLink to="/">
-          <img src="/logo.svg" alt="TapView" />
+          <img src="/logo.svg" alt="TapView">
         </NuxtLink>
       </div>
       <nav class="items-center gap-x-8 hidden lg:flex">
-        <NuxtLink class="text-sm/6 font-semibold flex items-center gap-1 hover:text-primary" to="/product">Product</NuxtLink>
-        <NuxtLink class="text-sm/6 font-semibold flex items-center gap-1 hover:text-primary" to="/connector">Connector</NuxtLink>
-        <NuxtLink class="text-sm/6 font-semibold flex items-center gap-1 hover:text-primary" to="/docs">Docs</NuxtLink>
-        <NuxtLink class="text-sm/6 font-semibold flex items-center gap-1 hover:text-primary" to="/blog">Blog</NuxtLink>
-        <NuxtLink class="text-sm/6 font-semibold flex items-center gap-1 hover:text-primary" to="/pricing">Pricing</NuxtLink>
+        <NuxtLink class="text-sm/6 font-semibold flex items-center gap-1 hover:text-primary" to="/product">
+          Product
+        </NuxtLink>
+        <NuxtLink class="text-sm/6 font-semibold flex items-center gap-1 hover:text-primary" to="/connector">
+          Connector
+        </NuxtLink>
+        <NuxtLink class="text-sm/6 font-semibold flex items-center gap-1 hover:text-primary" to="/docs">
+          Docs
+        </NuxtLink>
+        <NuxtLink class="text-sm/6 font-semibold flex items-center gap-1 hover:text-primary" to="/blog">
+          Blog
+        </NuxtLink>
+        <NuxtLink class="text-sm/6 font-semibold flex items-center gap-1 hover:text-primary" to="/pricing">
+          Pricing
+        </NuxtLink>
       </nav>
       <div class="flex items-center justify-end lg:flex-1 gap-1.5">
-        <UButton color="primary">Get Started</UButton>
+        <UButton color="primary">
+          Get Started
+        </UButton>
       </div>
     </div>
-  </header>
+  </header> -->
+
+  <UHeader :links="links">
+    <template #logo>
+      <NuxtImg src="/logo.svg" class="h-5" alt="TapView" />
+    </template>
+
+    <template #right>
+      <UButton color="primary">
+        Get Started
+      </UButton>
+    </template>
+
+    <template #panel>
+      <UNavigationTree
+        :links="mapContentNavigation(navigation)"
+        default-open
+      />
+    </template>
+  </UHeader>
 </template>
 
 <style scoped>
@@ -47,7 +101,7 @@
       color: #333;
       text-decoration: none;
       font-weight: 500;
-      
+
       &:hover {
         color: var(--primary-color);
       }
@@ -74,4 +128,4 @@
     }
   }
 }
-</style> 
+</style>

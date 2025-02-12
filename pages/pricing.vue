@@ -1,25 +1,45 @@
-<template>
-  <div class="pricing-page">
-    <h1>Pricing Plans</h1>
-    <div class="pricing-grid">
-      <!-- Pricing plans will go here -->
-    </div>
-  </div>
-</template>
+<script setup lang="ts">
+const route = useRoute()
+const { data: page } = await useAsyncData(route.path, () => queryCollection('pricing').first())
+if (!page.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+}
 
-<script setup>
-// Pricing page logic here
+useSeoMeta({
+  title: page.value.title,
+  ogTitle: page.value.title,
+  description: page.value.description,
+  ogDescription: page.value.description,
+})
+
+// defineOgImageComponent('Saas')
+
+const isYearly = ref(false)
 </script>
 
-<style scoped>
-.pricing-page {
-  padding: 2rem;
-}
+<template>
+  <div v-if="page">
+    <UPageHero v-bind="page.hero">
+      <!-- <template #links>
+        <UPricingToggle
+          v-model="isYearly"
+          class="w-[240px]"
+          left="Full Management"
+          right="Semi-Managed"
+        />
+      </template> -->
+    </UPageHero>
 
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-</style> 
+    <UContainer>
+      <UPricingGrid>
+        <UPricingCard
+          v-for="(plan, index) in page.plans"
+          :key="index"
+          v-bind="plan"
+          :price="plan.price.hour"
+          cycle="hourly"
+        />
+      </UPricingGrid>
+    </UContainer>
+  </div>
+</template>

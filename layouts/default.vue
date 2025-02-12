@@ -5,9 +5,11 @@ import DotPattern from '~/components/BackgroundPatterns/DotPattern.vue'
 <template>
   <div class="flex flex-col min-h-screen">
     <AppHeader />
-    <main>
+
+    <UMain>
       <slot />
-    </main>
+    </UMain>
+
     <AppFooter />
 
     <div

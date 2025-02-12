@@ -10,8 +10,8 @@ const { data: page } = await useAsyncData(route.path, () => queryCollection('con
     <LandingHero />
 
     <ULandingSection
-      title="Core Technology Advantages"
-      description="Innovative solutions providing comprehensive support for your data services"
+      :title="page.advantages.title"
+      :description="page.advantages.description"
     >
       <UPageGrid>
         <ULandingCard
@@ -134,9 +134,3 @@ const { data: page } = await useAsyncData(route.path, () => queryCollection('con
     </ULandingSection>
   </div>
 </template>
-
-<style scoped>
-.home {
-  padding-top: 64px; /* Header height */
-}
-</style>

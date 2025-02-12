@@ -27,6 +27,12 @@ const imageSchema = z.object({
   srcset: z.string().optional(),
 })
 
+const badgeSchema = z.object({
+  label: z.string().nonempty(),
+  color: colorEnum.optional(),
+  variant: variantEnum,
+})
+
 const featureItemSchema = z.object({
   ...baseSchema,
   icon: z.string().nonempty(),
@@ -55,7 +61,7 @@ const testimonialUserSchema = userSchema.extend({
 
 export const collections = {
   content: defineCollection({
-    source: '**/*.yml',
+    source: '*index.yml',
     type: 'data',
     schema: z.object({
       ...baseSchema,
@@ -82,6 +88,55 @@ export const collections = {
           defaultOpen: z.boolean().optional(),
         })),
       }),
+    }),
+  }),
+
+  pricing: defineCollection({
+    source: '*pricing.yml',
+    type: 'data',
+    schema: z.object({
+      ...baseSchema,
+      hero: sectionWithLinksSchema,
+      plans: z.array(z.object({
+        title: z.string().nonempty(),
+        description: z.string().nonempty(),
+        price: z.object({
+          hour: z.string().nonempty(),
+          month: z.string().nonempty(),
+          year: z.string().nonempty(),
+        }),
+        align: z.enum(['top', 'center', 'bottom']),
+        button: linkSchema,
+        features: z.array(featureItemSchema),
+      })),
+    }),
+  }),
+
+  blog: defineCollection({
+    source: '*blog.yml',
+    type: 'data',
+    schema: z.object({
+      ...baseSchema,
+      posts: z.array(z.object({
+        title: z.string().nonempty(),
+        description: z.string().nonempty(),
+        date: z.string().nonempty(),
+        image: imageSchema,
+        author: userSchema,
+      })),
+    }),
+  }),
+
+  blogPost: defineCollection({
+    source: 'blog/*.md',
+    type: 'page',
+    schema: z.object({
+      ...baseSchema,
+      title: z.string().nonempty(),
+      description: z.string().nonempty(),
+      date: z.string().nonempty(),
+      badge: badgeSchema,
+      authors: z.array(userSchema),
     }),
   }),
 }

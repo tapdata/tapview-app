@@ -16,4 +16,27 @@ export default defineAppConfig({
       check: 'i-heroicons-check-circle-20-solid',
     },
   },
+  toc: {
+    title: 'Table of Contents',
+    bottom: {
+      title: 'Community',
+      edit: 'https://github.com/nuxt-ui-pro/docs/edit/v3/content',
+      links: [{
+        icon: 'i-lucide-star',
+        label: 'Star on GitHub',
+        to: 'https://github.com/nuxt/ui',
+        target: '_blank',
+      }, {
+        icon: 'i-lucide-book-open',
+        label: 'Nuxt UI Pro docs',
+        to: 'https://ui3.nuxt.dev/getting-started/installation/pro/nuxt',
+        target: '_blank',
+      }, {
+        icon: 'i-simple-icons-nuxtdotjs',
+        label: 'Purchase a license',
+        to: 'https://ui.nuxt.com/pro/purchase',
+        target: '_blank',
+      }],
+    },
+  },
 })
