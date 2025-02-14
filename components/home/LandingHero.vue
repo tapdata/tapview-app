@@ -2,8 +2,14 @@
   <section class="hero">
     <div class="container max-w-7xl">
       <div class="hero-content">
-        <h1>Building Document-Based Real-Time Materialized Views</h1>
-        <p>Collect Real-Time data from your  source RDBMS using CDC, build document-structured materialized views in MongoDB Atlas. Enjoy a FREE trial of our cloud service today!</p>
+        <h1 class="text-gray-900 dark:text-white">
+          Building Document-Based Real-Time Materialized Views
+        </h1>
+        <p class="text-gray-600 dark:text-gray-300">
+          Collect Real-Time data from your source RDBMS using CDC, build
+          document-structured materialized views in MongoDB Atlas. Enjoy a
+          FREE trial of our cloud service today!
+        </p>
         <div class="hero-actions">
           <UButton color="primary">
             Get Started
@@ -34,19 +40,15 @@
   }
 
   .hero-content {
-    h1 {
-      font-size: 3rem;
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-      color: #1a1a1a;
-    }
+    @apply max-w-3xl mb-16;
+  }
 
-    p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      color: #666;
-      margin-bottom: 2rem;
-    }
+  .hero-content h1 {
+    @apply text-4xl sm:text-5xl font-bold mb-6;
+  }
+
+  .hero-content p {
+    @apply text-lg mb-8;
   }
 
   .hero-actions {

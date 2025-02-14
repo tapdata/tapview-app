@@ -4,6 +4,20 @@ navigation: false
 hero:
   title: Building Document-Based Real-Time Materialized Views
   description: Collect Real-Time data from your source RDBMS using CDC, build document-structured materialized views in MongoDB Atlas. Enjoy a FREE trial of our cloud service today!
+  links:
+    - label: Get started
+      to: /signup
+      size: xl
+      color: primary
+      icon: i-heroicons-arrow-right-20-solid
+      trailing: true
+    - label: Read More
+      icon: i-heroicons-arrow-right-20-solid
+      size: xl
+      color: primary
+      variant: outline
+      to: /docs
+      target: _blank
 advantages:
   title: Core Technology Advantages
   description: Innovative solutions providing comprehensive support for your data services

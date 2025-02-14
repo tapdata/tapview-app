@@ -7,7 +7,34 @@ const { data: page } = await useAsyncData(route.path, () => queryCollection('con
 
 <template>
   <div class="home">
-    <LandingHero />
+    <ULandingHero
+      :title="page.hero.title"
+      :description="page.hero.description"
+      :links="page.hero.links"
+      :ui="{
+        container: 'gap-16 sm:gap-x-24 flex-row',
+        base: 'text-left',
+        title: '!text-[2rem] md:!text-[2.5rem] xl:!text-[3.5rem] !leading-[1.25] font-semibold tracking-tight text-gray-900 dark:text-white',
+        links: 'mt-10 flex flex-wrap justify-start gap-x-6 gap-y-3',
+      }"
+    >
+      <template #title>
+        <div>
+          Building Document-Based
+          <span
+            class="inline-block my-1 px-4 rounded-lg
+                       bg-primary-100 border-b-8 border-primary-400
+                       dark:bg-primary-900/50 dark:border-primary-600 dark:text-primary-100"
+          >
+            Real-Time
+          </span>
+          Materialized Views
+        </div>
+      </template>
+      <template #default>
+        <img class="hidden lg:block" src="~/assets/images/hero-diagram.svg" alt="TapView Diagram">
+      </template>
+    </ULandingHero>
 
     <ULandingSection
       :title="page.advantages.title"
