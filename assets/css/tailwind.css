@@ -7,3 +7,7 @@
   --ui-background: 255 255 255;
   --ui-foreground: var(--color-gray-700);
 }
+
+.bg-primary-gradient {
+  background: radial-gradient(29% 49% at 84% 82%, rgba(132, 66, 246, 0.13) 0%, rgba(0, 0, 0, 0) 100%), #f7f7fd;
+}

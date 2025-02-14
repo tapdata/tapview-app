@@ -32,14 +32,20 @@ const { data: page } = await useAsyncData(route.path, () => queryCollection('con
         </div>
       </template>
       <template #default>
-        <img class="hidden lg:block" src="~/assets/images/hero-diagram.svg" alt="TapView Diagram">
+        <img class="block dark:hidden" src="~/assets/images/hero-diagram.svg" alt="TapView Diagram">
+        <img class="hidden dark:block" src="~/assets/images/hero-diagram-dark.svg" alt="TapView Diagram">
+        <!-- <div class="absolute inset-0 rotate-180 bg-primary-gradient" /> -->
       </template>
     </ULandingHero>
 
     <ULandingSection
       :title="page.advantages.title"
       :description="page.advantages.description"
+      :ui="{
+        wrapper: 'relative py-24 sm:py-32',
+      }"
     >
+      <!-- <div class="absolute inset-0 -z-10 rotate-180 bg-primary-gradient" /> -->
       <UPageGrid>
         <ULandingCard
           v-for="(item, index) in page.advantages.items"
@@ -48,20 +54,22 @@ const { data: page } = await useAsyncData(route.path, () => queryCollection('con
           class="shadow-lg"
           :ui="{
             icon: {
-              wrapper: 'mb-2 pointer-events-none bg-primary-100 inline-flex items-center justify-center rounded-lg p-2',
-              base: 'w-8 h-8 flex-shrink-0 text-primary dark:text-white',
+              wrapper: 'mb-2 pointer-events-none inline-flex items-center justify-center rounded-lg p-2 bg-primary-100 dark:bg-primary-900/50',
+              base: 'w-8 h-8 flex-shrink-0 text-primary-600 dark:text-primary-200',
             },
           }"
-        >
-          <template #icon />
-        </ULandingCard>
+        />
       </UPageGrid>
     </ULandingSection>
 
     <ULandingSection
       :title="page.features.title"
       :description="page.features.description"
+      :ui="{
+        wrapper: 'relative py-24 sm:py-32',
+      }"
     >
+      <!-- <div class="absolute inset-0 -z-10 rotate-180 bg-primary-gradient" /> -->
       <UPageGrid :ui="{ wrapper: 'grid grid-cols-1 sm:grid-cols-1 xl:grid-cols-2 gap-8' }">
         <ULandingCard
           v-for="(item, index) in page.features.items"
@@ -85,7 +93,7 @@ const { data: page } = await useAsyncData(route.path, () => queryCollection('con
         <div
           v-for="(story, index) in page.stories.items"
           :key="index"
-          class="group relative bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+          class="group relative bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
         >
           <!-- Image container -->
           <div class="aspect-w-16 aspect-h-9 overflow-hidden">
@@ -98,17 +106,17 @@ const { data: page } = await useAsyncData(route.path, () => queryCollection('con
 
           <!-- Content area -->
           <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              {{ story.title }}
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+              Seamless Data Integration
             </h3>
-            <p class="text-gray-600 mb-4">
-              {{ story.description }}
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Experience real-time data synchronization with our advanced CDC technology, ensuring your MongoDB views are always up-to-date with your source database.
             </p>
 
             <!-- Read more button -->
             <NuxtLink
               :to="story.link"
-              class="inline-flex items-center text-purple-600 hover:text-purple-700"
+              class="inline-flex items-center text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
             >
               Read More
               <svg
@@ -127,17 +135,6 @@ const { data: page } = await useAsyncData(route.path, () => queryCollection('con
             </NuxtLink>
           </div>
         </div>
-        <!-- <ULandingCard
-          v-for="(item, index) in page.body.stories.items"
-          :key="index"
-          v-bind="item"
-        >
-          <img
-            :src="item.image"
-            alt="Product Feature"
-            class="w-full h-full object-cover"
-          >
-        </ULandingCard> -->
       </UPageGrid>
     </ULandingSection>
 
