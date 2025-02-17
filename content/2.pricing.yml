@@ -16,6 +16,8 @@ plans:
     button:
       label: Get Started
       color: white
+      to: https://view.tapdata.io/
+      target: _blank
     features:
       - 10 GB Traffic
       - Post-sales engineer support
@@ -32,6 +34,8 @@ plans:
     button:
       label: Get Started
       color: black
+      to: https://view.tapdata.io/
+      target: _blank
     features:
       - 10 GB Traffic
       - Advanced engineer support
@@ -47,6 +51,8 @@ plans:
     button:
       label: Get Started
       color: white
+      to: https://view.tapdata.io/
+      target: _blank
     features:
       - 10 GB Traffic
       - Expert engineer 1-on-1 support

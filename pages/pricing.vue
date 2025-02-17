@@ -31,15 +31,17 @@ const isYearly = ref(false)
     </UPageHero>
 
     <UContainer>
-      <UPricingGrid>
-        <UPricingCard
-          v-for="(plan, index) in page.plans"
-          :key="index"
-          v-bind="plan"
-          :price="plan.price.hour"
-          cycle="hourly"
-        />
-      </UPricingGrid>
+      <ULandingSection>
+        <UPricingGrid>
+          <UPricingCard
+            v-for="(plan, index) in page.plans"
+            :key="index"
+            v-bind="plan"
+            :price="plan.price.hour"
+            cycle="hourly"
+          />
+        </UPricingGrid>
+      </ULandingSection>
     </UContainer>
   </div>
 </template>

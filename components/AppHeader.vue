@@ -8,10 +8,12 @@ const links = [{
   to: '/product',
 }, {
   label: 'Connector',
-  to: '/connector',
+  to: 'https://tapdata.io/connectors/',
+  target: '_blank',
 }, {
   label: 'Docs',
-  to: '/docs',
+  to: 'https://docs.tapdata.io/tapflow/',
+  target: '_blank',
 }, {
   label: 'Blog',
   to: '/blog',

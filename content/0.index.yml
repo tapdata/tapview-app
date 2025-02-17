@@ -6,7 +6,8 @@ hero:
   description: Collect Real-Time data from your source RDBMS using CDC, build document-structured materialized views in MongoDB Atlas. Enjoy a FREE trial of our cloud service today!
   links:
     - label: Get started
-      to: /signup
+      to: https://view.tapdata.io/
+      target: _blank
       size: xl
       color: primary
       icon: i-heroicons-arrow-right-20-solid
@@ -16,7 +17,7 @@ hero:
       size: xl
       color: primary
       variant: outline
-      to: /docs
+      to: https://docs.tapdata.io/tapflow/
       target: _blank
 advantages:
   title: Core Technology Advantages

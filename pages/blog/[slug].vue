@@ -21,28 +21,12 @@ if (!data.value || !data.value.page) {
 const page = computed(() => data.value?.page)
 const surround = computed(() => data.value?.surround)
 
-// const { data: post } = await useAsyncData(route.path, () => queryCollection<BlogPost>('blog').findOne())
-// if (!post.value) {
-//   throw createError({ statusCode: 404, statusMessage: 'Post not found', fatal: true })
-// }
-
-// const { data: surround } = await useAsyncData(`${route.path}-surround`, () => queryContent('/blog')
-//   .where({ _extension: 'md' })
-//   .without(['body', 'excerpt'])
-//   .sort({ date: -1 })
-//   .findSurround(withoutTrailingSlash(route.path)), { default: () => [] })
-
-// const title = post.value.head?.title || post.value.title
-// const description = post.value.head?.description || post.value.description
-
 useSeoMeta({
   title: page.value.seo.title,
   ogTitle: `${page.value.seo.title} - ${seo?.siteName}`,
   description: page.value.seo.description,
   ogDescription: page.value.seo.description,
 })
-
-console.log('page', page.value)
 </script>
 
 <template>
@@ -52,17 +36,17 @@ console.log('page', page.value)
       :description="page.description"
     >
       <template #headline>
-        <UBadge
+        <!-- <UBadge
           v-if="page.badge"
           :color="page.badge.color as BadgeColor"
           variant="subtle"
           :label="page.badge.label"
         />
-        <span class="text-gray-500 dark:text-gray-400">&middot;</span>
+        <span class="text-gray-500 dark:text-gray-400">&middot;</span> -->
         <time class="text-gray-500 dark:text-gray-400">{{ new Date(page.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }) }}</time>
       </template>
 
-      <div class="flex flex-wrap items-center gap-3 mt-4">
+      <!-- <div class="flex flex-wrap items-center gap-3 mt-4">
         <UButton
           v-for="(author, index) in page.authors"
           :key="index"
@@ -79,7 +63,7 @@ console.log('page', page.value)
 
           {{ author.name }}
         </UButton>
-      </div>
+      </div> -->
     </UPageHeader>
 
     <UPage>

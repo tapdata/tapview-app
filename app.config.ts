@@ -15,6 +15,15 @@ export default defineAppConfig({
       close: 'i-heroicons-x-mark-20-solid',
       check: 'i-heroicons-check-circle-20-solid',
     },
+    footer: {
+      top: {
+        wrapper: 'border-t border-gray-200 dark:border-gray-800',
+        container: 'py-8 lg:py-16',
+      },
+      bottom: {
+        wrapper: 'border-t border-gray-200 dark:border-gray-800',
+      },
+    },
   },
   toc: {
     title: 'Table of Contents',

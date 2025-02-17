@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import clsx from "clsx"
-
 interface GridPatternProps {
   width?: number
   height?: number
@@ -25,10 +23,8 @@ const patternId = generateUniqueId()
 <template>
   <svg
     aria-hidden="true"
-    :class="clsx(
-      'pointer-events-none absolute inset-0 h-full w-full fill-gray-400/30 stroke-gray-400/30',
-      props.className,
-    )"
+    class="pointer-events-none absolute inset-0 h-full w-full fill-gray-400/30 stroke-gray-400/30"
+    :class="[props.className]"
     v-bind="props"
   >
     <defs>
