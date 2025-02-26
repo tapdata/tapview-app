@@ -32,8 +32,14 @@ const { data: page } = await useAsyncData(route.path, () => queryCollection('con
         </div>
       </template>
       <template #default>
-        <img class="block dark:hidden" src="~/assets/images/hero-diagram.svg" alt="TapView Diagram">
-        <img class="hidden dark:block" src="~/assets/images/hero-diagram-dark.svg" alt="TapView Diagram">
+        <div class="relative flex-shrink-0">
+          <img class="block dark:hidden" src="~/assets/images/hero-diagram.svg" alt="TapView Diagram">
+          <img class="hidden dark:block" src="~/assets/images/hero-diagram-dark.svg" alt="TapView Diagram">
+          <div
+            class="w-80 h-80 bg-purple-500 rounded-full opacity-70 dark:opacity-60 blur-[120px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -z-10"
+          />
+        </div>
+
         <!-- <div class="absolute inset-0 rotate-180 bg-primary-gradient" /> -->
       </template>
     </ULandingHero>
